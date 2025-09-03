@@ -1,6 +1,6 @@
-streamlit>=1.32
-streamlit-searchbox>=0.3.1
-yfinance>=0.2.40
-pandas>=2.1
-numpy>=1.26
-altair>=5.0
+streamlit==1.36.0
+yfinance==0.2.43
+pandas==2.2.2
+numpy==1.26.4
+altair==5.3.0
+streamlit-searchbox==0.3.1
