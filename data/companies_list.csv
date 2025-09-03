@@ -1,0 +1,623 @@
+ticker,name,index,sector
+MMM,3M,SP500,Industrials
+AOS,A. O. Smith,SP500,Industrials
+ABT,Abbott Laboratories,SP500,Healthcare
+ABBV,AbbVie,SP500,Healthcare
+ACN,Accenture,SP500,Technology
+ADBE,Adobe Inc.,SP500,Technology
+AMD,Advanced Micro Devices,SP500,Technology
+AES,AES Corporation,SP500,Utilities
+AFL,Aflac,SP500,Financial Services
+A,Agilent Technologies,SP500,Healthcare
+APD,Air Products,SP500,Basic Materials
+ABNB,Airbnb,SP500,Consumer Cyclical
+AKAM,Akamai Technologies,SP500,Technology
+ALB,Albemarle Corporation,SP500,Basic Materials
+ARE,Alexandria Real Estate Equities,SP500,Real Estate
+ALGN,Align Technology,SP500,Healthcare
+ALLE,Allegion,SP500,Industrials
+LNT,Alliant Energy,SP500,Utilities
+ALL,Allstate,SP500,Financial Services
+GOOGL,Alphabet Inc. (Class A),SP500,Communication Services
+GOOG,Alphabet Inc. (Class C),SP500,Communication Services
+MO,Altria,SP500,Consumer Defensive
+AMZN,Amazon,SP500,Consumer Cyclical
+AMCR,Amcor,SP500,Consumer Cyclical
+AEE,Ameren,SP500,Utilities
+AEP,American Electric Power,SP500,Utilities
+AXP,American Express,SP500,Financial Services
+AIG,American International Group,SP500,Financial Services
+AMT,American Tower,SP500,Real Estate
+AWK,American Water Works,SP500,Utilities
+AMP,Ameriprise Financial,SP500,Financial Services
+AME,Ametek,SP500,Industrials
+AMGN,Amgen,SP500,Healthcare
+APH,Amphenol,SP500,Technology
+ADI,Analog Devices,SP500,Technology
+AON,Aon plc,SP500,Financial Services
+APA,APA Corporation,SP500,Energy
+APO,Apollo Global Management,SP500,Financial Services
+AAPL,Apple Inc.,SP500,Technology
+AMAT,Applied Materials,SP500,Technology
+APTV,Aptiv,SP500,Consumer Cyclical
+ACGL,Arch Capital Group,SP500,Financial Services
+ADM,Archer Daniels Midland,SP500,Consumer Defensive
+ANET,Arista Networks,SP500,Technology
+AJG,Arthur J. Gallagher & Co.,SP500,Financial Services
+AIZ,Assurant,SP500,Financial Services
+T,AT&T,SP500,Communication Services
+ATO,Atmos Energy,SP500,Utilities
+ADSK,Autodesk,SP500,Technology
+ADP,Automatic Data Processing,SP500,Technology
+AZO,AutoZone,SP500,Consumer Cyclical
+AVB,AvalonBay Communities,SP500,Real Estate
+AVY,Avery Dennison,SP500,Consumer Cyclical
+AXON,Axon Enterprise,SP500,Industrials
+BKR,Baker Hughes,SP500,Energy
+BALL,Ball Corporation,SP500,Consumer Cyclical
+BAC,Bank of America,SP500,Financial Services
+BAX,Baxter International,SP500,Healthcare
+BDX,Becton Dickinson,SP500,Healthcare
+BRK-B,Berkshire Hathaway,SP500,
+BBY,Best Buy,SP500,Consumer Cyclical
+TECH,Bio-Techne,SP500,Healthcare
+BIIB,Biogen,SP500,Healthcare
+BLK,BlackRock,SP500,Financial Services
+BX,Blackstone Inc.,SP500,Financial Services
+XYZ,"Block, Inc.",SP500,Technology
+BK,BNY Mellon,SP500,Financial Services
+BA,Boeing,SP500,Industrials
+BKNG,Booking Holdings,SP500,Consumer Cyclical
+BSX,Boston Scientific,SP500,Healthcare
+BMY,Bristol Myers Squibb,SP500,Healthcare
+AVGO,Broadcom,SP500,Technology
+BR,Broadridge Financial Solutions,SP500,Technology
+BRO,Brown & Brown,SP500,Financial Services
+BF.B,Brown–Forman,SP500,
+BLDR,Builders FirstSource,SP500,Industrials
+BG,Bunge Global,SP500,Consumer Defensive
+BXP,"BXP, Inc.",SP500,Real Estate
+CHRW,C.H. Robinson,SP500,Industrials
+CDNS,Cadence Design Systems,SP500,Technology
+CZR,Caesars Entertainment,SP500,Consumer Cyclical
+CPT,Camden Property Trust,SP500,Real Estate
+CPB,Campbell's Company (The),SP500,Consumer Defensive
+COF,Capital One,SP500,Financial Services
+CAH,Cardinal Health,SP500,Healthcare
+KMX,CarMax,SP500,Consumer Cyclical
+CCL,Carnival,SP500,Consumer Cyclical
+CARR,Carrier Global,SP500,Industrials
+CAT,Caterpillar Inc.,SP500,Industrials
+CBOE,Cboe Global Markets,SP500,Financial Services
+CBRE,CBRE Group,SP500,Real Estate
+CDW,CDW Corporation,SP500,Technology
+COR,Cencora,SP500,Healthcare
+CNC,Centene Corporation,SP500,Healthcare
+CNP,CenterPoint Energy,SP500,Utilities
+CF,CF Industries,SP500,Basic Materials
+CRL,Charles River Laboratories,SP500,Healthcare
+SCHW,Charles Schwab Corporation,SP500,Financial Services
+CHTR,Charter Communications,SP500,Communication Services
+CVX,Chevron Corporation,SP500,Energy
+CMG,Chipotle Mexican Grill,SP500,Consumer Cyclical
+CB,Chubb Limited,SP500,Financial Services
+CHD,Church & Dwight,SP500,Consumer Defensive
+CI,Cigna,SP500,Healthcare
+CINF,Cincinnati Financial,SP500,Financial Services
+CTAS,Cintas,SP500,Industrials
+CSCO,Cisco,SP500,Technology
+C,Citigroup,SP500,Financial Services
+CFG,Citizens Financial Group,SP500,Financial Services
+CLX,Clorox,SP500,Consumer Defensive
+CME,CME Group,SP500,Financial Services
+CMS,CMS Energy,SP500,Utilities
+KO,Coca-Cola Company (The),SP500,Consumer Defensive
+CTSH,Cognizant,SP500,Technology
+COIN,Coinbase,SP500,Financial Services
+CL,Colgate-Palmolive,SP500,Consumer Defensive
+CMCSA,Comcast,SP500,Communication Services
+CAG,Conagra Brands,SP500,Consumer Defensive
+COP,ConocoPhillips,SP500,Energy
+ED,Consolidated Edison,SP500,Utilities
+STZ,Constellation Brands,SP500,Consumer Defensive
+CEG,Constellation Energy,SP500,Utilities
+COO,Cooper Companies (The),SP500,Healthcare
+CPRT,Copart,SP500,Industrials
+GLW,Corning Inc.,SP500,Technology
+CPAY,Corpay,SP500,Technology
+CTVA,Corteva,SP500,Basic Materials
+CSGP,CoStar Group,SP500,Real Estate
+COST,Costco,SP500,Consumer Defensive
+CTRA,Coterra,SP500,Energy
+CRWD,CrowdStrike,SP500,Technology
+CCI,Crown Castle,SP500,Real Estate
+CSX,CSX Corporation,SP500,Industrials
+CMI,Cummins,SP500,Industrials
+CVS,CVS Health,SP500,Healthcare
+DHR,Danaher Corporation,SP500,Healthcare
+DRI,Darden Restaurants,SP500,Consumer Cyclical
+DDOG,Datadog,SP500,Technology
+DVA,DaVita,SP500,Healthcare
+DAY,Dayforce,SP500,Technology
+DECK,Deckers Brands,SP500,Consumer Cyclical
+DE,Deere & Company,SP500,Industrials
+DELL,Dell Technologies,SP500,Technology
+DAL,Delta Air Lines,SP500,Industrials
+DVN,Devon Energy,SP500,Energy
+DXCM,Dexcom,SP500,Healthcare
+FANG,Diamondback Energy,SP500,Energy
+DLR,Digital Realty,SP500,Real Estate
+DG,Dollar General,SP500,Consumer Defensive
+DLTR,Dollar Tree,SP500,Consumer Defensive
+D,Dominion Energy,SP500,Utilities
+DPZ,Domino's,SP500,Consumer Cyclical
+DASH,DoorDash,SP500,Consumer Cyclical
+DOV,Dover Corporation,SP500,Industrials
+DOW,Dow Inc.,SP500,Basic Materials
+DHI,D. R. Horton,SP500,Consumer Cyclical
+DTE,DTE Energy,SP500,Utilities
+DUK,Duke Energy,SP500,Utilities
+DD,DuPont,SP500,Basic Materials
+EMN,Eastman Chemical Company,SP500,Basic Materials
+ETN,Eaton Corporation,SP500,Industrials
+EBAY,eBay Inc.,SP500,Consumer Cyclical
+ECL,Ecolab,SP500,Basic Materials
+EIX,Edison International,SP500,Utilities
+EW,Edwards Lifesciences,SP500,Healthcare
+EA,Electronic Arts,SP500,Communication Services
+ELV,Elevance Health,SP500,Healthcare
+EMR,Emerson Electric,SP500,Industrials
+ENPH,Enphase Energy,SP500,Technology
+ETR,Entergy,SP500,Utilities
+EOG,EOG Resources,SP500,Energy
+EPAM,EPAM Systems,SP500,Technology
+EQT,EQT Corporation,SP500,Energy
+EFX,Equifax,SP500,Industrials
+EQIX,Equinix,SP500,Real Estate
+EQR,Equity Residential,SP500,Real Estate
+ERIE,Erie Indemnity,SP500,Financial Services
+ESS,Essex Property Trust,SP500,Real Estate
+EL,Estée Lauder Companies (The),SP500,Consumer Defensive
+EG,Everest Group,SP500,Financial Services
+EVRG,Evergy,SP500,Utilities
+ES,Eversource Energy,SP500,Utilities
+EXC,Exelon,SP500,Utilities
+EXE,Expand Energy,SP500,Energy
+EXPE,Expedia Group,SP500,Consumer Cyclical
+EXPD,Expeditors International,SP500,Industrials
+EXR,Extra Space Storage,SP500,Real Estate
+XOM,ExxonMobil,SP500,Energy
+FFIV,"F5, Inc.",SP500,Technology
+FDS,FactSet,SP500,Financial Services
+FICO,Fair Isaac,SP500,Technology
+FAST,Fastenal,SP500,Industrials
+FRT,Federal Realty Investment Trust,SP500,Real Estate
+FDX,FedEx,SP500,Industrials
+FIS,Fidelity National Information Services,SP500,Technology
+FITB,Fifth Third Bancorp,SP500,Financial Services
+FSLR,First Solar,SP500,Technology
+FE,FirstEnergy,SP500,Utilities
+FI,Fiserv,SP500,Technology
+F,Ford Motor Company,SP500,Consumer Cyclical
+FTNT,Fortinet,SP500,Technology
+FTV,Fortive,SP500,Technology
+FOXA,Fox Corporation (Class A),SP500,Communication Services
+FOX,Fox Corporation (Class B),SP500,Communication Services
+BEN,Franklin Resources,SP500,Financial Services
+FCX,Freeport-McMoRan,SP500,Basic Materials
+GRMN,Garmin,SP500,Technology
+IT,Gartner,SP500,Technology
+GE,GE Aerospace,SP500,Industrials
+GEHC,GE HealthCare,SP500,Healthcare
+GEV,GE Vernova,SP500,Industrials
+GEN,Gen Digital,SP500,Technology
+GNRC,Generac,SP500,Industrials
+GD,General Dynamics,SP500,Industrials
+GIS,General Mills,SP500,Consumer Defensive
+GM,General Motors,SP500,Consumer Cyclical
+GPC,Genuine Parts Company,SP500,Consumer Cyclical
+GILD,Gilead Sciences,SP500,Healthcare
+GPN,Global Payments,SP500,Industrials
+GL,Globe Life,SP500,Financial Services
+GDDY,GoDaddy,SP500,Technology
+GS,Goldman Sachs,SP500,Financial Services
+HAL,Halliburton,SP500,Energy
+HIG,Hartford (The),SP500,Financial Services
+HAS,Hasbro,SP500,Consumer Cyclical
+HCA,HCA Healthcare,SP500,Healthcare
+DOC,Healthpeak Properties,SP500,Real Estate
+HSIC,Henry Schein,SP500,Healthcare
+HSY,Hershey Company (The),SP500,Consumer Defensive
+HPE,Hewlett Packard Enterprise,SP500,Technology
+HLT,Hilton Worldwide,SP500,Consumer Cyclical
+HOLX,Hologic,SP500,Healthcare
+HD,Home Depot (The),SP500,Consumer Cyclical
+HON,Honeywell,SP500,Industrials
+HRL,Hormel Foods,SP500,Consumer Defensive
+HST,Host Hotels & Resorts,SP500,Real Estate
+HWM,Howmet Aerospace,SP500,Industrials
+HPQ,HP Inc.,SP500,Technology
+HUBB,Hubbell Incorporated,SP500,Industrials
+HUM,Humana,SP500,Healthcare
+HBAN,Huntington Bancshares,SP500,Financial Services
+HII,Huntington Ingalls Industries,SP500,Industrials
+IBM,IBM,SP500,Technology
+IEX,IDEX Corporation,SP500,Industrials
+IDXX,Idexx Laboratories,SP500,Healthcare
+ITW,Illinois Tool Works,SP500,Industrials
+INCY,Incyte,SP500,Healthcare
+IR,Ingersoll Rand,SP500,Industrials
+PODD,Insulet Corporation,SP500,Healthcare
+INTC,Intel,SP500,Technology
+IBKR,Interactive Brokers,SP500,Financial Services
+ICE,Intercontinental Exchange,SP500,Financial Services
+IFF,International Flavors & Fragrances,SP500,Basic Materials
+IP,International Paper,SP500,Consumer Cyclical
+IPG,Interpublic Group of Companies (The),SP500,Communication Services
+INTU,Intuit,SP500,Technology
+ISRG,Intuitive Surgical,SP500,Healthcare
+IVZ,Invesco,SP500,Financial Services
+INVH,Invitation Homes,SP500,Real Estate
+IQV,IQVIA,SP500,Healthcare
+IRM,Iron Mountain,SP500,Real Estate
+JBHT,J.B. Hunt,SP500,Industrials
+JBL,Jabil,SP500,Technology
+JKHY,Jack Henry & Associates,SP500,Technology
+J,Jacobs Solutions,SP500,Industrials
+JNJ,Johnson & Johnson,SP500,Healthcare
+JCI,Johnson Controls,SP500,Industrials
+JPM,JPMorgan Chase,SP500,Financial Services
+K,Kellanova,SP500,Consumer Defensive
+KVUE,Kenvue,SP500,Consumer Defensive
+KDP,Keurig Dr Pepper,SP500,Consumer Defensive
+KEY,KeyCorp,SP500,Financial Services
+KEYS,Keysight Technologies,SP500,Technology
+KMB,Kimberly-Clark,SP500,Consumer Defensive
+KIM,Kimco Realty,SP500,Real Estate
+KMI,Kinder Morgan,SP500,Energy
+KKR,KKR & Co.,SP500,Financial Services
+KLAC,KLA Corporation,SP500,Technology
+KHC,Kraft Heinz,SP500,Consumer Defensive
+KR,Kroger,SP500,Consumer Defensive
+LHX,L3Harris,SP500,Industrials
+LH,Labcorp,SP500,Healthcare
+LRCX,Lam Research,SP500,Technology
+LW,Lamb Weston,SP500,Consumer Defensive
+LVS,Las Vegas Sands,SP500,Consumer Cyclical
+LDOS,Leidos,SP500,Technology
+LEN,Lennar,SP500,Consumer Cyclical
+LII,Lennox International,SP500,Industrials
+LLY,Lilly (Eli),SP500,Healthcare
+LIN,Linde plc,SP500,Basic Materials
+LYV,Live Nation Entertainment,SP500,Communication Services
+LKQ,LKQ Corporation,SP500,Consumer Cyclical
+LMT,Lockheed Martin,SP500,Industrials
+L,Loews Corporation,SP500,Financial Services
+LOW,Lowe's,SP500,Consumer Cyclical
+LULU,Lululemon Athletica,SP500,Consumer Cyclical
+LYB,LyondellBasell,SP500,Basic Materials
+MTB,M&T Bank,SP500,Financial Services
+MPC,Marathon Petroleum,SP500,Energy
+MKTX,MarketAxess,SP500,Financial Services
+MAR,Marriott International,SP500,Consumer Cyclical
+MMC,Marsh McLennan,SP500,Financial Services
+MLM,Martin Marietta Materials,SP500,Basic Materials
+MAS,Masco,SP500,Industrials
+MA,Mastercard,SP500,Financial Services
+MTCH,Match Group,SP500,Communication Services
+MKC,McCormick & Company,SP500,Consumer Defensive
+MCD,McDonald's,SP500,Consumer Cyclical
+MCK,McKesson Corporation,SP500,Healthcare
+MDT,Medtronic,SP500,Healthcare
+MRK,Merck & Co.,SP500,Healthcare
+META,Meta Platforms,SP500,Communication Services
+MET,MetLife,SP500,Financial Services
+MTD,Mettler Toledo,SP500,Healthcare
+MGM,MGM Resorts,SP500,Consumer Cyclical
+MCHP,Microchip Technology,SP500,Technology
+MU,Micron Technology,SP500,Technology
+MSFT,Microsoft,SP500,Technology
+MAA,Mid-America Apartment Communities,SP500,Real Estate
+MRNA,Moderna,SP500,Healthcare
+MHK,Mohawk Industries,SP500,Consumer Cyclical
+MOH,Molina Healthcare,SP500,Healthcare
+TAP,Molson Coors Beverage Company,SP500,Consumer Defensive
+MDLZ,Mondelez International,SP500,Consumer Defensive
+MPWR,Monolithic Power Systems,SP500,Technology
+MNST,Monster Beverage,SP500,Consumer Defensive
+MCO,Moody's Corporation,SP500,Financial Services
+MS,Morgan Stanley,SP500,Financial Services
+MOS,Mosaic Company (The),SP500,Basic Materials
+MSI,Motorola Solutions,SP500,Technology
+MSCI,MSCI Inc.,SP500,Financial Services
+NDAQ,"Nasdaq, Inc.",SP500,Financial Services
+NTAP,NetApp,SP500,Technology
+NFLX,Netflix,SP500,Communication Services
+NEM,Newmont,SP500,Basic Materials
+NWSA,News Corp (Class A),SP500,Communication Services
+NWS,News Corp (Class B),SP500,Communication Services
+NEE,NextEra Energy,SP500,Utilities
+NKE,"Nike, Inc.",SP500,Consumer Cyclical
+NI,NiSource,SP500,Utilities
+NDSN,Nordson Corporation,SP500,Industrials
+NSC,Norfolk Southern,SP500,Industrials
+NTRS,Northern Trust,SP500,Financial Services
+NOC,Northrop Grumman,SP500,Industrials
+NCLH,Norwegian Cruise Line Holdings,SP500,Consumer Cyclical
+NRG,NRG Energy,SP500,Utilities
+NUE,Nucor,SP500,Basic Materials
+NVDA,Nvidia,SP500,Technology
+NVR,"NVR, Inc.",SP500,Consumer Cyclical
+NXPI,NXP Semiconductors,SP500,Technology
+ORLY,O’Reilly Automotive,SP500,Consumer Cyclical
+OXY,Occidental Petroleum,SP500,Energy
+ODFL,Old Dominion,SP500,Industrials
+OMC,Omnicom Group,SP500,Communication Services
+ON,ON Semiconductor,SP500,Technology
+OKE,Oneok,SP500,Energy
+ORCL,Oracle Corporation,SP500,Technology
+OTIS,Otis Worldwide,SP500,Industrials
+PCAR,Paccar,SP500,Industrials
+PKG,Packaging Corporation of America,SP500,Consumer Cyclical
+PLTR,Palantir Technologies,SP500,Technology
+PANW,Palo Alto Networks,SP500,Technology
+PSKY,Paramount Skydance Corporation,SP500,Communication Services
+PH,Parker Hannifin,SP500,Industrials
+PAYX,Paychex,SP500,Technology
+PAYC,Paycom,SP500,Technology
+PYPL,PayPal,SP500,Financial Services
+PNR,Pentair,SP500,Industrials
+PEP,PepsiCo,SP500,Consumer Defensive
+PFE,Pfizer,SP500,Healthcare
+PCG,PG&E Corporation,SP500,Utilities
+PM,Philip Morris International,SP500,Consumer Defensive
+PSX,Phillips 66,SP500,Energy
+PNW,Pinnacle West Capital,SP500,Utilities
+PNC,PNC Financial Services,SP500,Financial Services
+POOL,Pool Corporation,SP500,Industrials
+PPG,PPG Industries,SP500,Basic Materials
+PPL,PPL Corporation,SP500,Utilities
+PFG,Principal Financial Group,SP500,Financial Services
+PG,Procter & Gamble,SP500,Consumer Defensive
+PGR,Progressive Corporation,SP500,Financial Services
+PLD,Prologis,SP500,Real Estate
+PRU,Prudential Financial,SP500,Financial Services
+PEG,Public Service Enterprise Group,SP500,Utilities
+PTC,PTC Inc.,SP500,Technology
+PSA,Public Storage,SP500,Real Estate
+PHM,PulteGroup,SP500,Consumer Cyclical
+PWR,Quanta Services,SP500,Industrials
+QCOM,Qualcomm,SP500,Technology
+DGX,Quest Diagnostics,SP500,Healthcare
+RL,Ralph Lauren Corporation,SP500,Consumer Cyclical
+RJF,Raymond James Financial,SP500,Financial Services
+RTX,RTX Corporation,SP500,Industrials
+O,Realty Income,SP500,Real Estate
+REG,Regency Centers,SP500,Real Estate
+REGN,Regeneron Pharmaceuticals,SP500,Healthcare
+RF,Regions Financial Corporation,SP500,Financial Services
+RSG,Republic Services,SP500,Industrials
+RMD,ResMed,SP500,Healthcare
+RVTY,Revvity,SP500,Healthcare
+ROK,Rockwell Automation,SP500,Industrials
+ROL,"Rollins, Inc.",SP500,Consumer Cyclical
+ROP,Roper Technologies,SP500,Technology
+ROST,Ross Stores,SP500,Consumer Cyclical
+RCL,Royal Caribbean Group,SP500,Consumer Cyclical
+SPGI,S&P Global,SP500,Financial Services
+CRM,Salesforce,SP500,Technology
+SBAC,SBA Communications,SP500,Real Estate
+SLB,Schlumberger,SP500,Energy
+STX,Seagate Technology,SP500,Technology
+SRE,Sempra,SP500,Utilities
+NOW,ServiceNow,SP500,Technology
+SHW,Sherwin-Williams,SP500,Basic Materials
+SPG,Simon Property Group,SP500,Real Estate
+SWKS,Skyworks Solutions,SP500,Technology
+SJM,J.M. Smucker Company (The),SP500,Consumer Defensive
+SW,Smurfit Westrock,SP500,Consumer Cyclical
+SNA,Snap-on,SP500,Industrials
+SOLV,Solventum,SP500,Healthcare
+SO,Southern Company,SP500,Utilities
+LUV,Southwest Airlines,SP500,Industrials
+SWK,Stanley Black & Decker,SP500,Industrials
+SBUX,Starbucks,SP500,Consumer Cyclical
+STT,State Street Corporation,SP500,Financial Services
+STLD,Steel Dynamics,SP500,Basic Materials
+STE,Steris,SP500,Healthcare
+SYK,Stryker Corporation,SP500,Healthcare
+SMCI,Supermicro,SP500,Technology
+SYF,Synchrony Financial,SP500,Financial Services
+SNPS,Synopsys,SP500,Technology
+SYY,Sysco,SP500,Consumer Defensive
+TMUS,T-Mobile US,SP500,Communication Services
+TROW,T. Rowe Price,SP500,Financial Services
+TTWO,Take-Two Interactive,SP500,Communication Services
+TPR,"Tapestry, Inc.",SP500,Consumer Cyclical
+TRGP,Targa Resources,SP500,Energy
+TGT,Target Corporation,SP500,Consumer Defensive
+TEL,TE Connectivity,SP500,Technology
+TDY,Teledyne Technologies,SP500,Technology
+TER,Teradyne,SP500,Technology
+TSLA,"Tesla, Inc.",SP500,Consumer Cyclical
+TXN,Texas Instruments,SP500,Technology
+TPL,Texas Pacific Land Corporation,SP500,Energy
+TXT,Textron,SP500,Industrials
+TMO,Thermo Fisher Scientific,SP500,Healthcare
+TJX,TJX Companies,SP500,Consumer Cyclical
+TKO,TKO Group Holdings,SP500,Communication Services
+TTD,Trade Desk (The),SP500,Communication Services
+TSCO,Tractor Supply,SP500,Consumer Cyclical
+TT,Trane Technologies,SP500,Industrials
+TDG,TransDigm Group,SP500,Industrials
+TRV,Travelers Companies (The),SP500,Financial Services
+TRMB,Trimble Inc.,SP500,Technology
+TFC,Truist Financial,SP500,Financial Services
+TYL,Tyler Technologies,SP500,Technology
+TSN,Tyson Foods,SP500,Consumer Defensive
+USB,U.S. Bancorp,SP500,Financial Services
+UBER,Uber,SP500,Technology
+UDR,"UDR, Inc.",SP500,Real Estate
+ULTA,Ulta Beauty,SP500,Consumer Cyclical
+UNP,Union Pacific Corporation,SP500,Industrials
+UAL,United Airlines Holdings,SP500,Industrials
+UPS,United Parcel Service,SP500,Industrials
+URI,United Rentals,SP500,Industrials
+UNH,UnitedHealth Group,SP500,Healthcare
+UHS,Universal Health Services,SP500,Healthcare
+VLO,Valero Energy,SP500,Energy
+VTR,Ventas,SP500,Real Estate
+VLTO,Veralto,SP500,Industrials
+VRSN,Verisign,SP500,Technology
+VRSK,Verisk Analytics,SP500,Industrials
+VZ,Verizon,SP500,Communication Services
+VRTX,Vertex Pharmaceuticals,SP500,Healthcare
+VTRS,Viatris,SP500,Healthcare
+VICI,Vici Properties,SP500,Real Estate
+V,Visa Inc.,SP500,Financial Services
+VST,Vistra Corp.,SP500,Utilities
+VMC,Vulcan Materials Company,SP500,Basic Materials
+WRB,W. R. Berkley Corporation,SP500,Financial Services
+GWW,W. W. Grainger,SP500,Industrials
+WAB,Wabtec,SP500,Industrials
+WMT,Walmart,SP500,Consumer Defensive
+DIS,Walt Disney Company (The),SP500,Communication Services
+WBD,Warner Bros. Discovery,SP500,Communication Services
+WM,Waste Management,SP500,Industrials
+WAT,Waters Corporation,SP500,Healthcare
+WEC,WEC Energy Group,SP500,Utilities
+WFC,Wells Fargo,SP500,Financial Services
+WELL,Welltower,SP500,Real Estate
+WST,West Pharmaceutical Services,SP500,Healthcare
+WDC,Western Digital,SP500,Technology
+WY,Weyerhaeuser,SP500,Real Estate
+WSM,"Williams-Sonoma, Inc.",SP500,Consumer Cyclical
+WMB,Williams Companies,SP500,Energy
+WTW,Willis Towers Watson,SP500,Financial Services
+WDAY,"Workday, Inc.",SP500,Technology
+WYNN,Wynn Resorts,SP500,Consumer Cyclical
+XEL,Xcel Energy,SP500,Utilities
+XYL,Xylem Inc.,SP500,Industrials
+YUM,Yum! Brands,SP500,Consumer Cyclical
+ZBRA,Zebra Technologies,SP500,Technology
+ZBH,Zimmer Biomet,SP500,Healthcare
+ZTS,Zoetis,SP500,Healthcare
+GAPB.MX,Grupo Aeroportuario del Pacifico,IPC,Industrials
+Q.MX,Qualitas Controladora,IPC,Financial Services
+GRUMAB.MX,Grupo Maseca,IPC,Consumer Defensive
+VESTA.MX,Corporacion Inmobiliaria Vesta,IPC,Real Estate
+GCC.MX,GCC,IPC,Basic Materials
+CHDRAUIB.MX,Grupo Comercial Chedraui,IPC,Consumer Defensive
+BOLSAA.MX,"Bolsa Mexicana de Valores, S.A.B. de C.V.",IPC,Financial Services
+LACOMERUBC.MX,La Comer,IPC,Consumer Cyclical
+OMAB.MX,Grupo Aeroportuario del Centro Norte,IPC,Industrials
+MEGACPO.MX,Megacable Holdings,IPC,
+CTALPEKA.MX,Controladora Alpek,IPC,Basic Materials
+ALSEA.MX,Controladora Alsea,IPC,Consumer Cyclical
+AC.MX,Arca Continental,IPC,Consumer Defensive
+ASURB.MX,Grupo Aeroportuario del Sureste,IPC,Industrials
+GENTERA.MX,Gentera,IPC,Financial Services
+KIMBERA.MX,Kimberly-Clark de Mexico,IPC,Consumer Defensive
+GMEXICOB.MX,Grupo Mexico,IPC,Basic Materials
+AMXB.MX,America Movil,IPC,Communication Services
+TLEVISACPO.MX,Grupo Televisa,IPC,Communication Services
+CUERVO.MX,Becle,IPC,Consumer Defensive
+GCARSOA1.MX,Grupo Carso,IPC,Industrials
+LABB.MX,Genomma Lab Internacional,IPC,Healthcare
+RA.MX,Regional,IPC,Financial Services
+ORBIA.MX,Orbia Advance Corporation,IPC,Industrials
+CEMEXCPO.MX,Cemex,IPC,Basic Materials
+BIMBOA.MX,Grupo Bimbo,IPC,Consumer Defensive
+BBAJIOO.MX,Banco del Bajio,IPC,Financial Services
+PINFRA.MX,Pinfra,IPC,Industrials
+LIVEPOLC-1.MX,El Puerto de Liverpool,IPC,Consumer Cyclical
+SANN.MX,Santander Mexico,IPC,Financial Services
+WALMEX.MX,Walmex,IPC,Consumer Defensive
+GFNORTEO.MX,Grupo Financiero Banorte,IPC,Financial Services
+ALFAA.MX,Grupo Alfa,IPC,Basic Materials
+GFINBURO.MX,Grupo Financiero Inbursa,IPC,Financial Services
+ELEKTRA.MX,Grupo Elektra,IPC,Financial Services
+KOFUBL.MX,Coca-Cola FEMSA,IPC,Consumer Defensive
+PETR4.SA,Petroleo Brasileiro SA Pfd P,IBOV,Energy
+PETR3.SA,Petroleo Brasileiro SA,IBOV,Energy
+ITUB4.SA,Itau Unibanco Holding SA Pfd P,IBOV,Financial Services
+VALE3.SA,Vale S.A.,IBOV,Basic Materials
+ABEV3.SA,Ambev SA,IBOV,Consumer Defensive
+BBDC3.SA,Banco Bradesco SA,IBOV,Financial Services
+BBDC4.SA,Banco Bradesco SA Pfd P,IBOV,Financial Services
+WEGE3.SA,WEG SA,IBOV,Industrials
+ITSA4.SA,Itausa SA Non-Cum Perp Pfd Registered Shs P,IBOV,Industrials
+BBAS3.SA,Banco do Brasil S.A.,IBOV,Financial Services
+VIVT3.SA,Telefonica Brasil S.A.,IBOV,Communication Services
+ELET3.SA,Centrais Eletricas Brasileiras SA-Eletrobras,IBOV,Utilities
+ELET6.SA,Centrais Eletricas Brasileiras SA-Eletrobras Pfd B P,IBOV,Utilities
+RDOR3.SA,Rede D'Or Sao Luiz SA,IBOV,Healthcare
+SBSP3.SA,Companhia de Saneamento Basico do Estado de Sao Paulo SABESP,IBOV,Utilities
+SUZB3.SA,Suzano S.A.,IBOV,Basic Materials
+BBSE3.SA,BB Seguridade Participacoes SA,IBOV,Financial Services
+EMBR3.SA,Embraer S.A.,IBOV,Industrials
+TIMS3.SA,TIM S.A.,IBOV,Communication Services
+CPFE3.SA,CPFL Energia S.A.,IBOV,Utilities
+EQTL3.SA,Equatorial S.A.,IBOV,Utilities
+CXSE3.SA,Caixa Seguridade Participacoes SA,IBOV,Financial Services
+RENT3.SA,Localiza Rent A Car SA,IBOV,Industrials
+CMIG4.SA,Companhia Energetica de Minas Gerais SA Pfd P,IBOV,Utilities
+CPLE6.SA,Companhia Paranaense de Energia - COPEL Pfd Registered B P,IBOV,Utilities
+BRFS3.SA,BRF S.A.,IBOV,Consumer Defensive
+PSSA3.SA,Porto Seguro S.A.,IBOV,Financial Services
+EGIE3.SA,ENGIE Brasil Energia S.A.,IBOV,Utilities
+PRIO3.SA,Prio SA,IBOV,Energy
+GGBR4.SA,Gerdau S.A. Pfd P,IBOV,Basic Materials
+RADL3.SA,Raia Drogasil S.A.,IBOV,Healthcare
+ENEV3.SA,Eneva S.A.,IBOV,Utilities
+MOTV3.SA,Motiva Infraestrutura de Mobilidade SA,IBOV,Industrials
+CMIN3.SA,CSN Mineracao SA,IBOV,Basic Materials
+RAIL3.SA,Rumo SA,IBOV,Industrials
+VBBR3.SA,Vibra Energia SA,IBOV,Consumer Cyclical
+TOTS3.SA,TOTVS S.A.,IBOV,Technology
+UGPA3.SA,Ultrapar Participacoes S.A.,IBOV,Energy
+MRFG3.SA,Marfrig Global Foods SA,IBOV,Consumer Defensive
+HAPV3.SA,Hapvida Participacoes e Investimentos SA,IBOV,Financial Services
+LREN3.SA,Lojas Renner S.A.,IBOV,Consumer Cyclical
+ISAE4.SA,Isa Energia Brasil SA Non-Cum Perp Pfd Registered Shs P,IBOV,Utilities
+HYPE3.SA,Hypera S.A.,IBOV,Healthcare
+SMFT3.SA,Smartfit Escola de Ginastica e Danca SA,IBOV,Consumer Cyclical
+ASAI3.SA,Sendas Distribuidora SA,IBOV,Consumer Defensive
+MULT3.SA,Multiplan Empreendimentos Imobiliarios SA,IBOV,Real Estate
+ALOS3.SA,Allos S.A.,IBOV,Real Estate
+NATU3.SA,Natura Cosmeticos SA,IBOV,Consumer Defensive
+STBP3.SA,Santos Brasil Participacoes SA,IBOV,Industrials
+RAIZ4.SA,Raizen SA Non-Cum Perp Pfd Registered Shs P,IBOV,Utilities
+AURE3.SA,Auren Energia SA,IBOV,Utilities
+CSAN3.SA,Cosan S.A.,IBOV,Energy
+CYRE3.SA,Cyrela Brazil Realty SA Empreendimentos e Participacoes,IBOV,Consumer Cyclical
+CSNA3.SA,Companhia Siderurgica Nacional,IBOV,Basic Materials
+CURY3.SA,Cury Construtora e Incorporadora SA,IBOV,Real Estate
+POMO4.SA,Marcopolo SA Pfd P,IBOV,Industrials
+GOAU4.SA,Metalurgica Gerdau SA Pfd P,IBOV,Basic Materials
+BRAV3.SA,Brava Energia,IBOV,Energy
+FLRY3.SA,Fleury SA,IBOV,Healthcare
+DIRR3.SA,Direcional Engenharia S.A.,IBOV,Real Estate
+BRKM5.SA,Braskem S.A. Pfd A P,IBOV,Basic Materials
+SLCE3.SA,SLC Agricola S.A.,IBOV,Consumer Defensive
+AZZA3.SA,Azzas 2154 SA,IBOV,Consumer Cyclical
+VIVA3.SA,Vivara Participacoes SA,IBOV,Consumer Cyclical
+BRAP4.SA,Bradespar SA Pfd P,IBOV,Financial Services
+BEEF3.SA,Minerva S.A.,IBOV,Consumer Defensive
+MGLU3.SA,Magazine Luiza S.A.,IBOV,Consumer Cyclical
+USIM5.SA,Usinas Siderurgicas de Minas Gerais SA-Usiminas Pfd A P,IBOV,Basic Materials
+COGN3.SA,Cogna Educacao S.A.,IBOV,Consumer Defensive
+CEAB3.SA,C&A Modas SA,IBOV,Consumer Cyclical
+VAMO3.SA,"Vamos Locacao de Caminhoes, Maquinas e Equipamentos SA",IBOV,Industrials
+MRVE3.SA,MRV Engenharia e Participacoes S.A.,IBOV,Real Estate
+IRBR3.SA,IRB Brasil Resseguros SA,IBOV,Financial Services
+RECV3.SA,Petroreconcavo SA,IBOV,Energy
+YDUQ3.SA,YDUQS Participacoes SA,IBOV,Consumer Defensive
+PCAR3.SA,Companhia Brasileira de Distribuicao,IBOV,Consumer Cyclical
+CVCB3.SA,CVC Brasil Operadora e Agencia de Viagens SA,IBOV,Consumer Cyclical
+KLBN11.SA,Klabin SA Ctf de Deposito de Acoes Cons of 1 Sh + 4 Pfd Shs,IBOV,Basic Materials
+TAEE11.SA,Transmissora Alianca De Energia Eletrica S.A. Unit,IBOV,Utilities
+SANB11.SA,Banco Santander (Brasil) S.A. Units Cons of 1 Sh + 1 Pfd Sh,IBOV,Financial Services
+BPAC11.SA,Banco BTG Pactual SA Units Cons of 1 Sh + 2 Pfd Shs A,IBOV,Financial Services
+ENGI11.SA,Energisa SA Units Cons of 1 Sh + 4 Pfd Shs,IBOV,Utilities
+IGTI11.SA,Iguatemi SA Units Cons of 1 Sh + 2 Pfd Shs,IBOV,Real Estate
