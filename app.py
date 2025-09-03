@@ -1,19 +1,29 @@
+# app.py — Company Valuation (robusto para Streamlit Cloud / Yahoo 429)
+
 import os
+import time
+import random
 from datetime import datetime, date
 from typing import Optional
 
 import numpy as np
 import pandas as pd
-import yfinance as yf
 import altair as alt
 import streamlit as st
+import yfinance as yf
+
 from streamlit_searchbox import st_searchbox
 
+# ----------------------- Configuración Streamlit -----------------------
 st.set_page_config(page_title="Company Valuation", layout="wide")
+alt.data_transformers.disable_max_rows()
 
+# ----------------------- Parámetros globales --------------------------
 PRICE_PERIOD = "5y"
 PRICE_INTERVAL = "1d"
-MAX_PEERS = 20
+
+# Menos peers para reducir presión a la API (antes 20)
+MAX_PEERS = 8
 MIN_COVERAGE = 0.50
 
 INDEX_BENCH = {
@@ -22,6 +32,37 @@ INDEX_BENCH = {
     "IBOV": "^BVSP", "IBOVESPA": "^BVSP", "IBOVESPA INDEX": "^BVSP"
 }
 
+# ----------------------- Sesión HTTP robusta --------------------------
+# Evita 429 y errores transitorios en entornos compartidos (Streamlit Cloud)
+import requests
+from requests.adapters import HTTPAdapter
+from urllib3.util.retry import Retry
+
+@st.cache_resource(show_spinner=False)
+def http_session():
+    s = requests.Session()
+    retry = Retry(
+        total=3,                # hasta 3 reintentos
+        backoff_factor=1.2,     # 0s, 1.2s, 2.4s...
+        status_forcelist=[429, 500, 502, 503, 504],
+        allowed_methods=["GET"],
+        raise_on_status=False
+    )
+    adapter = HTTPAdapter(max_retries=retry)
+    s.mount("https://", adapter)
+    s.mount("http://", adapter)
+    s.headers.update({
+        "User-Agent": "Mozilla/5.0 (compatible; StreamlitApp/1.0)"
+    })
+    return s
+
+SESSION = http_session()
+
+def _sleep_jitter(base=0.6):
+    """Pequeña pausa con jitter para ser amable con la API."""
+    time.sleep(base + random.random()*0.4)  # 0.6–1.0s por defecto
+
+# ----------------------- Utils de formato -----------------------------
 def _num(x, default=np.nan):
     try:
         v = float(x)
@@ -97,6 +138,7 @@ def _avg_last2(series: pd.Series):
         return np.nan
     except: return np.nan
 
+# ----------------------- Render helpers -------------------------------
 def render_chips(pairs):
     # pairs: [(label, value, formatter_fn), ...]
     valid = [(lab, val, fmt) for lab, val, fmt in pairs if (isinstance(val, (int, float)) and np.isfinite(val))]
@@ -165,18 +207,13 @@ def chart_multi_returns(df: pd.DataFrame, keep_cols, title="Cumulative Return (%
         .interactive()
     )
 
+# ----------------------- Monte Carlo (EWMA) ---------------------------
 def build_mc_ewma_paths(px_series: pd.Series,
                         business_days: int = 252,
                         n_paths: int = 1500,
                         lam: float = 0.94,
                         quantiles=(0.10, 0.50, 0.90),
                         seed: int = 7) -> Optional[pd.DataFrame]:
-    """
-    Monte Carlo con EWMA: genera N trayectorias de 1 año (días hábiles) y
-    devuelve 3 paths representativos (Bear/Base/Bull) cuyos precios terminales
-    están cerca de los cuantiles pedidos. Devuelve DataFrame 'tidy':
-    Date, Scenario ∈ {Bear, Base, Bull}, Price.
-    """
     s = px_series.dropna()
     if len(s) < 120:
         return None
@@ -189,14 +226,12 @@ def build_mc_ewma_paths(px_series: pd.Series,
     sigma_last = float(sigma_t.iloc[-1])
 
     u = (logret / sigma_t).replace([np.inf, -np.inf], np.nan).dropna().values
-
     if len(u) < 50 or not np.isfinite(sigma_last) or sigma_last <= 0:
         return None
 
     rng = np.random.default_rng(seed)
-
-    Z = rng.choice(u, size=(business_days, n_paths), replace=True)  
-    R = mu_d + sigma_last * Z                                      
+    Z = rng.choice(u, size=(business_days, n_paths), replace=True)
+    R = mu_d + sigma_last * Z
 
     S0 = float(s.iloc[-1])
     log_paths = np.log(S0) + np.cumsum(R, axis=0)
@@ -245,6 +280,7 @@ def chart_hist_plus_scenarios(hist_series: pd.Series, scen_df: pd.DataFrame,
         .interactive()
     )
 
+# ----------------------- Carga de compañías ---------------------------
 @st.cache_data(show_spinner=False)
 def load_companies(path: str) -> pd.DataFrame:
     df = pd.read_csv(path)
@@ -264,47 +300,67 @@ def load_companies(path: str) -> pd.DataFrame:
     df["sector"] = df["sector"].astype(str).str.strip()
     return df
 
+# ----------------------- Wrappers robustos de Yahoo -------------------
 @st.cache_data(show_spinner=False, ttl=3600)
 def get_history(symbol: str, period=PRICE_PERIOD, interval=PRICE_INTERVAL) -> pd.DataFrame:
-    try:
-        df = yf.download(symbol, period=period, interval=interval, auto_adjust=True, progress=False)
-        if isinstance(df, pd.DataFrame) and not df.empty:
-            out = df.loc[:, ["Close"]].copy()
-            out.columns = [symbol]
-            return out
-    except Exception:
-        pass
+    for attempt in range(3):
+        try:
+            df = yf.download(
+                symbol, period=period, interval=interval,
+                auto_adjust=True, progress=False, session=SESSION, threads=False
+            )
+            if isinstance(df, pd.DataFrame) and not df.empty:
+                out = df.loc[:, ["Close"]].copy()
+                out.columns = [symbol]
+                return out
+        except Exception:
+            pass
+        _sleep_jitter(0.8 * (attempt + 1))
     return pd.DataFrame()
 
 @st.cache_data(show_spinner=False, ttl=3600)
 def get_multi_history(symbols, period=PRICE_PERIOD, interval=PRICE_INTERVAL) -> pd.DataFrame:
-    syms = [s for s in symbols if isinstance(s, str) and len(s)]
+    syms = [s for s in symbols if isinstance(s, str) and s]
     if not syms: return pd.DataFrame()
-    try:
-        df = yf.download(syms, period=period, interval=interval, auto_adjust=True, progress=False)
-        close = df["Close"] if "Close" in df else df
-        if isinstance(close, pd.Series):
-            close = close.to_frame()
-        if isinstance(close.columns, pd.MultiIndex):
-            close.columns = [c[-1] for c in close.columns]
-        else:
-            close.columns = [str(c) for c in close.columns]
-        return close.dropna(how="all")
-    except Exception:
-        frames = []
-        for s in syms[:MAX_PEERS]:
-            h = get_history(s, period, interval)
-            if not h.empty: frames.append(h)
-        return pd.concat(frames, axis=1).dropna(how="all") if frames else pd.DataFrame()
+    # Intento 1: descarga en bloque
+    for attempt in range(2):
+        try:
+            df = yf.download(
+                syms, period=period, interval=interval,
+                auto_adjust=True, progress=False, session=SESSION, threads=False
+            )
+            close = df["Close"] if "Close" in df else df
+            if isinstance(close, pd.Series):
+                close = close.to_frame()
+            if isinstance(close.columns, pd.MultiIndex):
+                close.columns = [c[-1] for c in close.columns]
+            else:
+                close.columns = [str(c) for c in close.columns]
+            out = close.dropna(how="all")
+            if not out.empty:
+                return out
+        except Exception:
+            pass
+        _sleep_jitter(0.9 * (attempt + 1))
+    # Fallback: de a uno
+    frames = []
+    for s in syms[:MAX_PEERS]:
+        h = get_history(s, period, interval)
+        if not h.empty: frames.append(h)
+        _sleep_jitter(0.35)
+    return pd.concat(frames, axis=1).dropna(how="all") if frames else pd.DataFrame()
 
-@st.cache_data(show_spinner=False, ttl=3600)
+@st.cache_data(show_spinner=False, ttl=7200)
 def get_info(tick: str) -> dict:
-    try:
-        return yf.Ticker(tick).info or {}
-    except Exception:
-        return {}
+    for attempt in range(3):
+        try:
+            # Preferir .get_info() (más estable en yfinance recientes)
+            return yf.Ticker(tick, session=SESSION).get_info() or {}
+        except Exception:
+            _sleep_jitter(0.9 * (attempt + 1))
+    return {}
 
-@st.cache_data(show_spinner=False, ttl=3600)
+@st.cache_data(show_spinner=False, ttl=7200)
 def get_statements(tick: str, last_years: int = 4):
     def _prep(df):
         if df is None or (isinstance(df, pd.DataFrame) and df.empty): return pd.DataFrame()
@@ -315,10 +371,17 @@ def get_statements(tick: str, last_years: int = 4):
         for c in out.columns: out[c] = pd.to_numeric(out[c], errors="coerce")
         return out
 
-    t = yf.Ticker(tick)
-    fin = _prep(t.financials)
-    bs  = _prep(t.balance_sheet)
-    cf  = _prep(t.cashflow)
+    # Intentos con sesión compartida
+    for attempt in range(3):
+        try:
+            t = yf.Ticker(tick, session=SESSION)
+            fin = _prep(t.financials)
+            bs  = _prep(t.balance_sheet)
+            cf  = _prep(t.cashflow)
+            break
+        except Exception:
+            fin = bs = cf = pd.DataFrame()
+            _sleep_jitter(1.0 * (attempt + 1))
 
     def pick(df, names):
         if df is None or df.empty: return pd.Series(dtype=float)
@@ -377,6 +440,7 @@ def get_statements(tick: str, last_years: int = 4):
     cashflow_tbl = _prune_statement(cashflow_tbl, MIN_COVERAGE).dropna(how="all")
     return income_tbl, balance_tbl, cashflow_tbl
 
+# ----------------------- Fair price y recomendación -------------------
 def compute_fair_price_band(info: dict, cmp_df: pd.DataFrame):
     ev = _num(info.get("enterpriseValue"))
     ebitda = _num(info.get("ebitda"))
@@ -430,6 +494,7 @@ def compute_reco(price_now, fair_dict):
     upside = fair_dict["mid"] / price_now - 1.0
     return "BUY" if upside >= 0.15 else ("SELL" if upside <= -0.15 else "HOLD")
 
+# ----------------------- Carga universo -------------------------------
 companies_path = os.path.join("data", "companies_list.csv")
 if not os.path.exists(companies_path):
     st.error("Missing data file: data/companies_list.csv"); st.stop()
@@ -466,6 +531,7 @@ comp_index = sel["index"].values[0]
 comp_sector = sel["sector"].values[0]
 bench = INDEX_BENCH.get(comp_index.upper(), None)
 
+# ----------------------- Info y peers -------------------------------
 with st.spinner("Loading company info…"):
     info = get_info(ticker)
     peers = companies[(companies["index"].str.upper() == comp_index.upper()) &
@@ -475,20 +541,24 @@ with st.spinner("Loading company info…"):
 
     @st.cache_data(show_spinner=False, ttl=1800)
     def fetch_peer_row(tk):
-        i = get_info(tk)
+        i = get_info(tk)  # cacheado
         ev = _num(i.get("enterpriseValue"))
         ebitda = _num(i.get("ebitda"))
         rev = _num(i.get("totalRevenue"))
         pe = _num(i.get("trailingPE"))
         ev_ebitda = ev/ebitda if (np.isfinite(ev) and np.isfinite(ebitda) and ebitda>0) else np.nan
-        ev_sales  = ev/rev if (np.isfinite(ev) and np.isfinite(rev) and rev>0) else np.nan
+        ev_sales  = ev/rev    if (np.isfinite(ev) and np.isfinite(rev)    and rev>0)    else np.nan
         return {"ticker": tk, "EV/EBITDA": ev_ebitda, "EV/Sales": ev_sales, "P/E": pe}
 
-    rows = [fetch_peer_row(ticker)] + [fetch_peer_row(tk) for tk in peer_ticks[:MAX_PEERS]]
+    rows = []
+    for tk in [ticker] + peer_ticks[:MAX_PEERS]:
+        rows.append(fetch_peer_row(tk))
+        _sleep_jitter(0.25)   # reduce presión
     cmp_df = pd.DataFrame(rows)
     cmp_df["Company"] = cmp_df["ticker"].map(TICKER_TO_NAME).fillna(cmp_df["ticker"])
     cmp_df = cmp_df.drop(columns=["ticker"]).set_index("Company")
 
+# ----------------------- Header métricas -----------------------------
 col1, col2, col3, col4 = st.columns([2, 2.8, 1.2, 1.0])
 with col1:
     st.subheader(f"{comp_name} ({ticker})")
@@ -512,6 +582,7 @@ except Exception:
     fair_global = None
 reco_label = compute_reco(price_now, fair_global)
 
+# ----------------------- Tabs -------------------------------
 tabs = st.tabs([
     "Overview", "Price & Benchmark", "Peers & Sector",
     "Financials", "Fair Price", "Dividends",
@@ -768,7 +839,7 @@ with tabs[4]:
 with tabs[5]:
     try:
         with st.spinner("Fetching dividends…"):
-            t = yf.Ticker(ticker); div = t.dividends
+            t = yf.Ticker(ticker, session=SESSION); div = t.dividends
         if div is not None and not div.empty:
             div = _ensure_naive_datetime_index(div)
 
@@ -782,7 +853,7 @@ with tabs[5]:
             peer_yields = []
             for tk in peer_ticks[:MAX_PEERS]:
                 try:
-                    d = yf.Ticker(tk).dividends
+                    d = yf.Ticker(tk, session=SESSION).dividends
                     if d is None or d.empty: continue
                     d = _ensure_naive_datetime_index(d)
                     d_ttm = d[d.index >= last_year].sum()
@@ -791,6 +862,7 @@ with tabs[5]:
                     if np.isfinite(y): peer_yields.append(y)
                 except Exception:
                     pass
+                _sleep_jitter(0.15)
             y_median = float(np.nanmedian(peer_yields)) if peer_yields else np.nan
 
             incL, balL, cfsL = get_statements(ticker, last_years=4)
