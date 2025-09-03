@@ -3,4 +3,3 @@ altair==5.1.2
 yfinance==0.2.43
 pandas==2.2.2
 numpy==1.26.4
-streamlit-searchbox==0.3.2
