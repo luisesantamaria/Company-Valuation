@@ -7,7 +7,6 @@ import pandas as pd
 import yfinance as yf
 import altair as alt
 import streamlit as st
-from streamlit_searchbox import st_searchbox
 
 st.set_page_config(page_title="Company Valuation", layout="wide")
 
